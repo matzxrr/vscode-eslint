@@ -228,12 +228,12 @@ connection.onInitialize((params, _cancel, progress) => {
 });
 
 connection.onInitialized(() => {
-	if (clientCapabilities.workspace?.didChangeConfiguration?.dynamicRegistration === true) {
-		connection.onDidChangeConfiguration((_params) => {
-			environmentChanged();
-		});
-		void connection.client.register(DidChangeConfigurationNotification.type, undefined);
-	}
+	// if (clientCapabilities.workspace?.didChangeConfiguration?.dynamicRegistration === true) {
+	// 	connection.onDidChangeConfiguration((_params) => {
+	// 		environmentChanged();
+	// 	});
+	// 	void connection.client.register(DidChangeConfigurationNotification.type, undefined);
+	// }
 
 	if (clientCapabilities.workspace?.workspaceFolders === true) {
 		connection.workspace.onDidChangeWorkspaceFolders((_params) => {
